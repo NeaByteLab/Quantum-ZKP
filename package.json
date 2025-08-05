@@ -1,0 +1,113 @@
+{
+  "name": "@neabyte/quantum-zkp",
+  "version": "1.0.0",
+  "description": "Educational quantum-resistant zero-knowledge proof library for learning and prototyping",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./lattice": {
+      "import": "./dist/algorithms/lattice.js",
+      "types": "./dist/algorithms/lattice.d.ts"
+    },
+    "./hash": {
+      "import": "./dist/algorithms/hash.js",
+      "types": "./dist/algorithms/hash.d.ts"
+    },
+    "./multivariate": {
+      "import": "./dist/algorithms/multivariate.js",
+      "types": "./dist/algorithms/multivariate.d.ts"
+    },
+    "./hybrid": {
+      "import": "./dist/algorithms/hybrid.js",
+      "types": "./dist/algorithms/hybrid.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc && tsc-alias -f -fe .js && npm run minify",
+    "minify": "find dist -name '*.js' -exec terser {} --compress --mangle -o {} \\;",
+    "dev": "tsc --watch",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "lint": "eslint src/**/*.ts",
+    "lint:fix": "eslint src/**/*.ts --fix",
+    "format": "prettier --write src/**/*.ts",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "npm run clean && npm run build",
+    "docs": "typedoc src/index.ts --out docs",
+    "benchmark": "npx tsx examples/benchmark.ts",
+    "example": "npx tsx examples/basic-usage.ts"
+  },
+  "keywords": [
+    "zero-knowledge-proof",
+    "zkp",
+    "quantum-resistant",
+    "cryptography",
+    "privacy",
+    "security",
+    "lattice",
+    "hash",
+    "multivariate",
+    "hybrid",
+    "post-quantum",
+    "blockchain",
+    "authentication",
+    "educational",
+    "prototyping",
+    "learning",
+    "quantum-safe",
+    "merkle-tree",
+    "lwe",
+    "rlwe",
+    "multivariate-polynomials"
+  ],
+  "author": {
+    "name": "NeaByteLab",
+    "email": "me@neabyte.com",
+    "url": "https://github.com/NeaByteLab"
+  },
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NeaByteLab/Quantum-ZKP.git"
+  },
+  "bugs": {
+    "url": "https://github.com/NeaByteLab/Quantum-ZKP/issues"
+  },
+  "homepage": "https://github.com/NeaByteLab/Quantum-ZKP#readme",
+  "devDependencies": {
+    "@eslint/js": "^9.32.0",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^24.2.0",
+    "@typescript-eslint/eslint-plugin": "^8.39.0",
+    "@typescript-eslint/parser": "^8.39.0",
+    "eslint": "^9.32.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-sonarjs": "^3.0.4",
+    "jest": "^30.0.5",
+    "prettier": "^3.6.2",
+    "terser": "^5.43.1",
+    "ts-jest": "^29.4.1",
+    "ts-node": "^10.9.2",
+    "tsc-alias": "^1.8.16",
+    "typedoc": "^0.28.9",
+    "typescript": "^5.9.2"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "files": [
+    "dist/**/*",
+    "README.md",
+    "LICENSE",
+    "SECURITY.md"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}
