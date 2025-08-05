@@ -27,6 +27,8 @@ A comprehensive TypeScript library implementing quantum-resistant zero-knowledge
 - **📱 Cross-Platform**: Node.js 22+ (browser support planned)
 - **🧪 Prototyping Tools**: Development utilities for testing concepts
 
+---
+
 ## 🏗️ Library Architecture
 
 ```mermaid
@@ -149,6 +151,8 @@ benchmarks.forEach(result => {
 })
 ```
 
+---
+
 ## 🧠 Zero-Knowledge Proof Concepts
 
 ### Basic ZKP Flow
@@ -216,7 +220,6 @@ flowchart LR
 ### Lattice-Based ZKP Flow
 
 ```mermaid
-%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#ffffff', 'primaryTextColor': '#000000', 'primaryBorderColor': '#000000', 'lineColor': '#000000', 'secondaryColor': '#f8f9fa', 'tertiaryColor': '#ffffff'}}}%%
 flowchart LR
     A[Secret] --> B[LWE Problem]
     B --> C[Commitment]
@@ -408,6 +411,8 @@ Efficiently creates multiple proofs.
 Benchmarks all supported algorithms.
 
 **Returns:** `BenchmarkResult[]` - Performance comparison results
+
+---
 
 ### Algorithm-Specific Classes
 
